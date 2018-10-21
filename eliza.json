@@ -9,18 +9,19 @@
 			"puoliso",
 			"lapsi"
 		],
-		"haluta": ["tahtoa", "toivoa", "himoita"],
-		"voida": ["osata"],
-		"mikä": ["milloin", "kuka", "millainen", "kuinka"],
-		"harmittaa": ["surettaa", "ahdistaa", "vaivaa", "painaa"],
-		"surullinen": ["onneton"],
-		"keskustelu": ["istunto", "viestintä"],
 		"koulu": [
 			"opettaja", "oppilas", "opiskelija",
 			"peruskoulu", "ammattikoulu", "lukio", "yliopisto",
 			"matematiikka", "äidinkieli", "yhteiskuntaoppi", "terveystieto", "maantieto",
 			"oppia", "opiskella"
 		],
+		"haluta": ["tahtoa", "toivoa", "himoita"],
+		"voida": ["osata"],
+		"täytyä": ["pitää", "pakko"],
+		"mikä": ["milloin", "kuka", "millainen", "kuinka"],
+		"harmittaa": ["surettaa", "ahdistaa", "vaivaa", "painaa"],
+		"surullinen": ["onneton"],
+		"keskustelu": ["istunto", "viestintä"],
 		"kyllä": ["joo", "juu"]
 	},
 	"avainsanat": {
@@ -59,9 +60,6 @@
 				"Minkä takia et muista (2)?",
 				"Mikä voisi autaa sinua muistamaan (2)?",
 				"Harmillista."
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"jos": {
@@ -151,9 +149,6 @@
 			],
 			"* miksi|milloin *": [
 				"suorita _kysymys_"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"voida": {
@@ -162,19 +157,15 @@
 				"Miltä sinusta tuntuu osata (2)?",
 				"Kauanko olet osannut (2)?"
 			],
-			"* en voi|osaa *": [
-				"Mistä tiedät, ettet voi (2)?",
+			"* en @voi|osaa *": [
+				"Mistä tiedät, ettet (2) (3)?",
 				"Oletko kokeillut?",
-				"Ehkä osaatkin (2) nyt.",
-				"Haluatko todella voida (2)?"
+				"Ehkä (2)tkin (3) nyt."
 			],
 			"* voitko|osaatko *": [
 				"Uskotko, että minä voin (2)?",
 				"suorita _kysymys_",
 				"Toivotko, että voin (2)?"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"tietää": {
@@ -193,9 +184,6 @@
 				"Luuletko, että tiedän (2)?",
 				"suorita _kysymys_",
 				"Haluaisitko minun tietävän (2)?"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"haluta": {
@@ -209,9 +197,6 @@
 			"* haluat|haluaisit|toivot|tahdot|tahtoisit|himoitset *": [
 				"Miksi luulet, että minä haluan (2)?",
 				"suorita sinä"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"tarvita": {
@@ -220,9 +205,6 @@
 				"Oletko varma, että tarvitset (2)?",
 				"Minkä vuoksi tarvitset (2)?",
 				"Mitä tekisit, jos saisit (2)?"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"uskoa": {
@@ -230,12 +212,22 @@
 				"Luuletko todella niin?",
 				"Miksi uskot (2)?",
 				"Epäiletkö koskaan?"
+			]
+		},
+		"täytyä": {
+			"* minun @täytyy|pitää *": [
+				"Miksi sinun (2) (3)?",
+				"Täytyykö sinun varmasti (3)?",
+				"Entä jos sinun ei pidäkään (3)?"
 			],
-			"*": [
-				"suorita *"
+			"* minun on pakko *": [
+				"Miksi sinun on pakko (2)?",
+				"Oletko varma, että sinun täytyy (2)?",
+				"Entä jos sinun ei täytyisikään (2)?"
 			]
 		},
 		"sinä": {
+			"__tärkeys__": 2,
 			"* sinun *": [
 				"Minun (2)?",
 				"Mitä minun (2)?"
@@ -269,9 +261,6 @@
 			"* harmittaa|surettaa|ahdistaa|vaivaa|painaa minua": [
 				"Kauanko tämä on vaivannut sinua?",
 				"Miksi tämä painaa sinua?"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"surullinen": {
@@ -297,9 +286,6 @@
 			"* keskustelu|keskustelumme * salassa|salainen%|luottamuksellinen% *": [
 				"Tämä keskustelu jää täysin meidän väliseksemme.",
 				"Kaikki käymämme keskustelu on luottamuksellista."
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"koulu": {
@@ -323,12 +309,9 @@
 			]
 		},
 		"mikä": {
-			"_tärkeys_": 1,
+			"__tärkeys__": 1,
 			"mikä%|kuka%|milloin|millainen%|kuinka *": [
 				"suorita _kysymys_"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"_kysymys_": {
@@ -348,9 +331,6 @@
 				"Hmm, oletko varma?",
 				"Ymmärrän, mutta mistä tiedät varmasti?",
 				"Voitko perustella?"
-			],
-			"*": [
-				"suorita *"
 			]
 		},
 		"kukaan": {
