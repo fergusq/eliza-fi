@@ -32,18 +32,13 @@ function getResponse(message) {
 }
 function getResponseToSingleSentence(message) {
 	var [keywords, cleanedMessage] = getKeywordsAndCleanedMessage(message);
-	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw));
-	if (matchingRules.length > 0) {
-		var rules = matchingRules.map(kw => ({__avainsana__: kw, ...script.avainsanat[kw]})).sortBy(rule => -rule.__tärkeys__ || 0);
-		for (var rule of rules) {
-			var answer = evalRule(rule, cleanedMessage);
-			if (answer !== null) {
-				return answer;
-			}
+	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw)).concat(["*"]);
+	var rules = matchingRules.map(kw => ({__avainsana__: kw, ...script.avainsanat[kw]})).sortBy(rule => -rule.__tärkeys__ || 0);
+	for (var rule of rules) {
+		var answer = evalRule(rule, cleanedMessage);
+		if (answer !== null) {
+			return answer;
 		}
-	}
-	else {
-		return evalRule(script.avainsanat["*"], cleanedMessage);
 	}
 }
 
