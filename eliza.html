@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="utf8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Eliza</title>
+	<script type="text/javascript" src="libvoikko.js"></script>
+	<script type="text/javascript" src="eliza.js"></script>
+	<script type="text/javascript">
+		function sendMessage() {
+			var log = document.querySelector("#log");
+			var field = document.querySelector("#message");
+			var message = field.value;
+			field.value = "";
+			log.innerHTML = log.innerHTML + "\n<b>Sinä:</b> " + message + "\n<i>" + getResponse(message) + "</i>";
+		}
+	</script>
+	<style>
+		body {
+			font-family: "Palatino", "Times", serif;
+		}
+		#log {
+			font-size: 1rem;
+			margin-bottom: 10px;
+		}
+		#message {
+			font-size: 1rem;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			display: block;
+			width: 100%;
+			font-family: monospace;
+			border: 1px dotted gray;
+		}
+	</style>
+</head>
+<body>
+	<h1>Suomenkielinen Eliza</h2>
+	<pre id="log"><i>Olen Eliza. Kuinka voin auttaa?</i></pre>
+	<form action="#" onsubmit="sendMessage()">
+		<input id="message" type="text" />
+		<input type="submit" />
+	</form>
+	<p>Tämä ohjelma toimii kokonaisuudessaan selaimessa, joten mitään syötettyjä viestejä ei lähetetä palvelimelle.</p>
+	<footer>
+		Suomenkielinen Eliza (c) Iikka Hauhio 2018. Lisensoitu GNU GPLv3 -lisenssillä.
+		Lähdekoodi: <a href="eliza.js">eliza.js</a>, <a href="eliza.json">eliza.json</a>
+		–
+		Projekti käyttää Harri Pitkäsen <a href="https://github.com/voikko/corevoikko">libvoikko-kirjastoa</a>.
+		–
+		Elizan skripti on osittain käännös <a href="http://chayden.net/eliza/instructions.txt"> tästä skriptistä</a>.
+	</footer>
+</body>
+</html>

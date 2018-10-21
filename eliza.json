@@ -1,0 +1,385 @@
+{
+	"synonyymit": {
+		"perhe": [
+			"äiti", "mutsi",
+			"isä", "isi", "faija",
+			"sisar", "sisko", "systeri",
+			"veli", "broidi",
+			"vaimo",
+			"puoliso",
+			"lapsi"
+		],
+		"haluta": ["tahtoa", "toivoa", "himoita"],
+		"voida": ["osata"],
+		"mikä": ["milloin", "kuka", "millainen", "kuinka"],
+		"harmittaa": ["surettaa", "ahdistaa", "vaivaa", "painaa"],
+		"surullinen": ["onneton"],
+		"keskustelu": ["istunto", "viestintä"],
+		"koulu": [
+			"opettaja", "oppilas", "opiskelija",
+			"peruskoulu", "ammattikoulu", "lukio", "yliopisto",
+			"matematiikka", "äidinkieli", "yhteiskuntaoppi", "terveystieto", "maantieto",
+			"oppia", "opiskella"
+		],
+		"kyllä": ["joo", "juu"]
+	},
+	"avainsanat": {
+		"*": {
+			"*": [
+				"Kerro lisää.",
+				"Mitä tarkoitat sillä, että (1)?",
+				"Voitko täsmentää?",
+				"Mitä tämä mielestäsi tarkoittaa?",
+				"Koetko voimakkaita tunteita puhuessasi tästä?",
+				"Kiinnostavaa..."
+			]
+		},
+		"anteeksi": {
+			"*": [
+				"Älä pyydä anteeksi.",
+				"Sinun ei tarvitse pyytää mitään anteeksi."
+			]
+		},
+		"muistaa": {
+			"__tärkeys__": 5,
+			"* muistan *": [
+				"Miten muistat (2)?",
+				"Muistatko jotain muuta sen lisäksi, että muistat (2)?",
+				"Mitä muuta muistat?",
+				"Pystytkö muistamaan (2) nyt?",
+				"Muistatko (2) nyt?"
+			],
+			"* muistatko *": [
+				"Kuinka unohtaisin (2)?",
+				"Miksi minun pitäisi muistaa (2)?",
+				"Kuinka niin?",
+				"suorita _kysymys_"
+			],
+			"* en muista *": [
+				"Minkä takia et muista (2)?",
+				"Mikä voisi autaa sinua muistamaan (2)?",
+				"Harmillista."
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"jos": {
+			"__tärkeys__": 3,
+			"* jos *": [
+				"Luuletko että (2)?",
+				"Toivotko että (2)?",
+				"Jos (2)?"
+			]
+		},
+		"uni": {
+			"__tärkeys__": 3,
+			"* näin unta *": [
+				"Näetkö usein unta (2)?",
+				"Mitä uni tarkoittaa?",
+				"Keitä henkilöitä unissasi on?"
+			],
+			"*": [
+				"Mitä tämä uni tarkoittaa?",
+				"Keitä henkilöitä unissasi on?"
+			]
+		},
+		"ehkä": {
+			"*": [
+				"Et vaikuta kovin varmalta...",
+				"Miksi vain ehkä?",
+				"Etkö voisi olla positiivisempi?",
+				"Etkö ole varma?",
+				"Etkö tiedä?"
+			]
+		},
+		"nimi": {
+			"__tärkeys__": 15,
+			"*": [
+				"En ole kiinnostunut nimistä.",
+				"Kuten sanoin, en ole kiinnostunut nimistä."
+			]
+		},
+		"hei": {
+			"*": [
+				"Hei. Voit kertoa minulle huolesi.",
+				"Hei. Mikä tuo sinut minun luokseni?"
+			]
+		},
+		"tietokone": {
+			"__tärkeys__": 50,
+			"*": [
+				"Ahdistavatko tietokoneet sinua?",
+				"Miksi puhut tietokoneista?",
+				"Uskotko että tietokoneista voisi olla apua sinulle?",
+				"Etkö usko tietokoneiden voivan auttaa ihmisiä?",
+				"Miksi tietokoneet ahdistavat sinua?",
+				"Mitä mieltä olet tietokoneista?"
+			]
+		},
+		"olla": {
+			"* olen *": [
+				"Tulitko luokseni, koska olet (2)?",
+				"Miksi uskot, että olet (2)?",
+				"Haluatko olla (2)?",
+				"Haluatko kuulla, että olet (2)?",
+				"Mitä tarkoittaisi, jos olisit (2)?"
+			],
+			"* en ole *": [
+				"Etkö todella ole (2)?",
+				"Miksi et ole (2)?",
+				"Haluaisitko olla (2)?",
+				"Harmittaako sinua?"
+			],
+			"* olet *": [
+				"Miksi olet kiinnostunut siitä, olenko (2)?",
+				"Etkö haluaisi, että olen (2)?",
+				"Ehkä olen (2) unissasi.",
+				"Luuletko että olen (2)?"
+			],
+			"* olinko *": [
+				"Mitä sitten, jos olitkin (2)?",
+				"Luulitko, että olit (2)?",
+				"Olitko sitten (2)?",
+				"Mitä merkitystä sillä on sinulle?",
+				"suorita _kysymys_"
+			],
+			"* olin *": [
+				"Olitko todella (2)?",
+				"Mitä tarkoitat sillä, että olit (2)?",
+				"Arvelinkin että olit (2)."
+			],
+			"* miksi|milloin *": [
+				"suorita _kysymys_"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"voida": {
+			"* voin|osaan *": [
+				"Onko sinulle tärkeää osata (2)?",
+				"Miltä sinusta tuntuu osata (2)?",
+				"Kauanko olet osannut (2)?"
+			],
+			"* en voi|osaa *": [
+				"Mistä tiedät, ettet voi (2)?",
+				"Oletko kokeillut?",
+				"Ehkä osaatkin (2) nyt.",
+				"Haluatko todella voida (2)?"
+			],
+			"* voitko|osaatko *": [
+				"Uskotko, että minä voin (2)?",
+				"suorita _kysymys_",
+				"Toivotko, että voin (2)?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"tietää": {
+			"* tiedän *": [
+				"Mistä tiedät (2)?",
+				"Oletko varma, että tiedät (2)?",
+				"Oletko varma?",
+				"Kauanko olet tiennyt (2)?"
+			],
+			"* en tiedä *": [
+				"Haluaisitko tietää (2)?",
+				"Ahdistaako tämä sinua?",
+				"Ahdistaako sinua, ettet tiedä (2)?"
+			],
+			"* tiedätkö *": [
+				"Luuletko, että tiedän (2)?",
+				"suorita _kysymys_",
+				"Haluaisitko minun tietävän (2)?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"haluta": {
+			"* haluan|haluaisin|toivon|tahdon|tahtoisin|himoitsen *": [
+				"Mitä tekisit, jos saisit mitä haluat?",
+				"Miksi haluat (2)?",
+				"Entä jos saisit mitä haluat?",
+				"Mitä jos tahtosi ei toteudu?",
+				"Mitä tarkoittaa, että haluat (2)?"
+			],
+			"* haluat|haluaisit|toivot|tahdot|tahtoisit|himoitset *": [
+				"Miksi luulet, että minä haluan (2)?",
+				"suorita sinä"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"tarvita": {
+			"* tarvitsen *": [
+				"Miksi tarvitset (2)?",
+				"Oletko varma, että tarvitset (2)?",
+				"Minkä vuoksi tarvitset (2)?",
+				"Mitä tekisit, jos saisit (2)?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"uskoa": {
+			"* uskon *": [
+				"Luuletko todella niin?",
+				"Miksi uskot (2)?",
+				"Epäiletkö koskaan?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"sinä": {
+			"* sinun *": [
+				"Minun (2)?",
+				"Mitä minun (2)?"
+			],
+			"* sinä * minua *": [
+				"Miksi ajattelet, että minä (2) sinua?",
+				"Haluaisitko että minä (2) sinua?",
+				"Mikä saa sinut ajattelemaan, että minä (2) sinua?",
+				"Oikeasti, minäkö (2) sinua?",
+				"Toivotko, että minä (2) sinua?",
+				"Oletetaan, että minä (2) sinua. Mitä se tarkoittaisi?",
+				"Onko joku sanonut, että minä (2) sinua?"
+			],
+			"* sinä * minut *": [
+				"Mitä tarkoitat sillä, että minä (2) sinut?",
+				"Miksi luulet, että minä (2) sinut?",
+				"Mitä siitä seuraisi, jos minä (2) sinut?"
+			],
+			"*": [
+				"Meidän on tarkoitus puhua sinusta, ei minusta.",
+				"Minä?",
+				"suorita *"
+			]
+		},
+		"harmittaa": {
+			"* minua harmittaa|surettaa|ahdistaa|vaivaa|painaa *": [
+				"Miksi sinua vaivaa (2)?",
+				"Kuinka kauan tämä on vaivannut sinua?",
+				"Olen pahoillani, että sinua vaivaa (2)."
+			],
+			"* harmittaa|surettaa|ahdistaa|vaivaa|painaa minua": [
+				"Kauanko tämä on vaivannut sinua?",
+				"Miksi tämä painaa sinua?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"surullinen": {
+			"__tärkeys__": 2,
+			"* olen surullinen|onneton *": [
+				"Olen pahoillani siitä, että olet surullinen.",
+				"Minkä vuoksi olet surullinen?",
+				"Ymmärrän, että sinusta tuntuu pahalta."
+			],
+			"*": [
+				"Tuntuuko sinusta pahalta?",
+				"suorita *"
+			]
+		},
+		"perhe": {
+			"*": [
+				"Kerro lisää perheestäsi.",
+				"Onko sinulla muita perheenjäseniä?",
+				"suorita *"
+			]
+		},
+		"keskustelu": {
+			"* keskustelu|keskustelumme * salassa|salainen%|luottamuksellinen% *": [
+				"Tämä keskustelu jää täysin meidän väliseksemme.",
+				"Kaikki käymämme keskustelu on luottamuksellista."
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"koulu": {
+			"__tärkeys__": 2,
+			"* opin *": [
+				"Onko sinusta hyvä asia, että opit (2)?",
+				"Opitko mitään muuta kuin (2)?",
+				"Kuinka tärkeää sinulle on, että opit (2)?",
+				"Mitä muuta opit kuin (2)?"
+			],
+			"* opiskelen *": [
+				"Kuinka kauan olet opiskellut (2)?",
+				"Onko sinusta tärkeää opiskella (2)?",
+				"Entä jos et opiskelisikaan (2)?"
+			],
+			"*": [
+				"Oletko oppinut mitään tärkeää viime aikoina?",
+				"Kerro lisää koulustasi.",
+				"Oletko kiinnostunut koulussa opetettavista asioista?",
+				"Mitä tunteita koulu herättää sinussa?"
+			]
+		},
+		"mikä": {
+			"_tärkeys_": 1,
+			"mikä%|kuka%|milloin|millainen%|kuinka *": [
+				"suorita _kysymys_"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"_kysymys_": {
+			"*": [
+				"Miksi kysyt?",
+				"Kiehtooko tuo kysymys sinua?",
+				"Mitä tahdot todella tietää?",
+				"Vaivaatko tuollaiset kysymykset sinua?",
+				"Mikä vastaus miellyttäisi sinua eniten?",
+				"Mitä luulet?",
+				"Mitä tulee mieleesi ensimmäisenä?",
+				"Oletko kysynyt keneltäkään muulta?"
+			]
+		},
+		"kyllä": {
+			"* kyllä|joo|juu *": [
+				"Hmm, oletko varma?",
+				"Ymmärrän, mutta mistä tiedät varmasti?",
+				"Voitko perustella?"
+			],
+			"*": [
+				"suorita *"
+			]
+		},
+		"kukaan": {
+			"__tärkeys__": 2,
+			"*": [
+				"Ei kukaan?",
+				"Varmaan joku kuitenkin."
+			]
+		},
+		"kaikki": {
+			"__tärkeys__": 2,
+			"*": [
+				"Kaikkiko?",
+				"suorita *"
+			]
+		},
+		"koskaan": {
+			"__tärkeys__": 2,
+			"*": [
+				"Ei koskaan?",
+				"Varmaan joskus kuitenkin."
+			]
+		},
+		"aina": {
+			"__tärkeys__": 2,
+			"*": [
+				"Ainako?",
+				"suorita *"
+			]
+		}
+	}
+}
