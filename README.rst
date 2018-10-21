@@ -23,15 +23,32 @@ Käsikirjoitusta noudatetaan seuraavasti:
 4. Jokaisen säännön kohdalla yritetään sovittaa säännön hahmoa syötteeseen.
 5. Palautetaan ensimmäsen sopivan säännön seuraavana jonossa oleva vastaus.
 
-Hahmonsovitus toimii sanakohtaisesti. Käytössä on seuraavat hahmot (missä ``sana`` on merkkijono ja ``a`` sekä ``b`` ovat hahmoja):
+Hahmonsovitus toimii sanekohtaisesti. Käytössä on seuraavat hahmot (missä ``sana`` on merkkijono ja ``a`` sekä ``b`` ovat hahmoja):
 
-1. ``*`` täsmää mihin tahansa tyhjään tai ei-tyhjään joukkoon sanoja.
+1. ``*`` täsmää mihin tahansa tyhjään tai ei-tyhjään joukkoon saneita.
 2. ``sana`` täsmää kirjaimellisesti samaan merkkijonoon.
-3. ``sana%`` täsmää kaikkiin sanoihin, joiden perusmuoto on "sana".
+3. ``sana%`` täsmää kaikkiin saneisiin, joiden perusmuoto on "sana".
 4. ``a|b`` täsmää joko a:han tai b:hen.
 5. ``@a`` täsmää a:han.
 
 Hahmonsovituksen lopputuloksena on lista syötteen alimerkkijonoja jokaista ``*``- ja ``@``-sääntöä kohden.
+
+Heikkoudet
+==========
+
+Ohjelma ei tällä hetkellä sisällä kunnollista tekstin jäsentämistä,
+joten sanojen perusmuotoistaminen on välillä melko satunnaista.
+Ohjelma ei esimerkiksi luulee usein, että "minä" on mikä-sanan essiivi ja
+"sinä" on se-sanan essiivi, vaikka sanat ovat useammin pronomineja.
+Ratkaisu tähän olisi jäsentää teksti siten, että jokaista sanetta vastaava
+lekseemi selviää oikein. En ole kuitenkaan löytänyt sopivaa JavaScriptillä
+tehtyä kirjastoa tätä varten.
+
+Vastausten laatiminen suomenkielisele Elizalle on haastavampaa kuin englanninkieliselle,
+sillä käyttäjän antamaa syöteestä ei voi yhtä helposti leikata ja liimata uusia lauseita.
+Tämä johtuu siitä, että uusissa lauseissa syötteen sanoja pitäisi ehkä taivuttaa eri tavalla
+kuin käyttäjän syötteessä, mitä on vaikea tehdä oikein ilman lauseen kunnollista jäsentämistä
+(ja se on silloinkin vaikeaa).
 
 Lisenssi
 ========
