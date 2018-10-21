@@ -26,6 +26,7 @@
 	},
 	"avainsanat": {
 		"*": {
+			"__tärkeys__": -1,
 			"*": [
 				"Kerro lisää.",
 				"Mitä tarkoitat sillä, että (1)?",
