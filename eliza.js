@@ -19,6 +19,7 @@ var voikko, script;
 
 fetch("eliza.json").then(x => x.json()).then(s => {
 	script = s;
+	script.avainsanat["*"].__avainsana__ = "*";
 });
 
 // This function returns the response of Eliza given a message
@@ -30,6 +31,23 @@ function getResponse(message) {
 	return voikko.sentences(message).map(s => getResponseToSingleSentence(s.text)).join(" ");
 }
 function getResponseToSingleSentence(message) {
+	var [keywords, cleanedMessage] = getKeywordsAndCleanedMessage(message);
+	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw));
+	if (matchingRules.length > 0) {
+		var rules = matchingRules.map(kw => ({__avainsana__: kw, ...script.avainsanat[kw]})).sortBy(rule => -rule.__tärkeys__ || 0);
+		for (var rule of rules) {
+			var answer = evalRule(rule, cleanedMessage);
+			if (answer !== null) {
+				return answer;
+			}
+		}
+	}
+	else {
+		return evalRule(script.avainsanat["*"], cleanedMessage);
+	}
+}
+
+function getKeywordsAndCleanedMessage(message) {
 	var keywords = [];
 	var cleanedMessage = "";
 	for (var token of voikko.tokens(message)) {
@@ -51,14 +69,7 @@ function getResponseToSingleSentence(message) {
 			cleanedMessage += token.text;
 		}
 	}
-	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw));
-	if (matchingRules.length > 0) {
-		var rules = matchingRules.map(kw => ({__avainsana__: kw, ...script.avainsanat[kw]})).sortBy(rule => -rule.__tärkeys__ || 0);
-		return evalRule(rules[0], cleanedMessage);
-	}
-	else {
-		return evalRule(script.avainsanat["*"], cleanedMessage);
-	}
+	return [keywords, cleanedMessage];
 }
 
 function evalRule(rule, message) {
@@ -75,6 +86,7 @@ function evalRule(rule, message) {
 			return answer;
 		}
 	}
+	return null;
 }
 
 function matches(pattern, message) {
@@ -93,6 +105,13 @@ function matchesHelper(patternTokens, messageTokens, i, j, groups) {
 	while (i <= patternTokens.length && j <= messageTokens.length) {
 		var patternToken = i < patternTokens.length ? patternTokens[i] : "<END>";
 		var messageToken = j < messageTokens.length ? messageTokens[j] : "<END>";
+		
+		var addGroup = false;
+		if (patternToken.startsWith("@")) {
+			patternToken = patternToken.substring(1);
+			addGroup = true;
+		}
+
 		if (patternToken === "*") {
 			ans = ans.concat(matchesHelper(patternTokens, messageTokens, i+1, j, groups.concat([""])));
 			groups[groups.length-1] = (groups[groups.length-1] || "") + " " + messageToken; 
@@ -100,6 +119,10 @@ function matchesHelper(patternTokens, messageTokens, i, j, groups) {
 		} else if (patternToken.split("|").some(pt => matchesToken(pt, messageToken))) {
 			i += 1;
 			j += 1;
+			if (addGroup) {
+				groups[groups.length-1] = messageToken;
+				groups.push("");
+			}
 		} else {
 			return ans;
 		}
