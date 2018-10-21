@@ -32,7 +32,7 @@ function getResponse(message) {
 }
 function getResponseToSingleSentence(message) {
 	var [keywords, cleanedMessage] = getKeywordsAndCleanedMessage(message);
-	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw)).concat(["*"]);
+	var matchingRules = Object.keys(script.avainsanat).filter(kw => keywords.includes(kw));
 	var rules = matchingRules.map(kw => ({__avainsana__: kw, ...script.avainsanat[kw]})).sortBy(rule => -rule.__tärkeys__ || 0);
 	for (var rule of rules) {
 		var answer = evalRule(rule, cleanedMessage);
@@ -43,7 +43,7 @@ function getResponseToSingleSentence(message) {
 }
 
 function getKeywordsAndCleanedMessage(message) {
-	var keywords = [];
+	var keywords = ["*"];
 	var cleanedMessage = "";
 	for (var token of voikko.tokens(message)) {
 		if (token.type === "WORD") {
